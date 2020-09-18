@@ -30,7 +30,15 @@ Crea una funcion llamada: challenge1  que realice lo siguiente:
 **/
 
 // CREA TU FUNCION challenge1 aqui 
-
+    function challenge1(e) {
+        let num = window.prompt("Cuantos botones?");
+        for (let i = 0; i < num; i++) {
+            let dummy = document.getElementById("dummy");
+            let btn = document.createElement("button");
+            btn.innerHTML = nombres[i];
+            dummy.append(btn);
+        }
+    }
 
 
 // ************** PARTE 2    **************
@@ -41,7 +49,11 @@ Crea una funcion llamada: challenge2 que utilizando un FOR convierta todos los n
 **/
 
 // CREA TU FUNCION challenge2 2 aquí.
-
+    function challenge2() {
+        nombres.forEach(name => {
+            console.log(name.toUpperCase());
+        })
+    }
 
 
 // ************** PARTE 3    **************
@@ -68,8 +80,25 @@ Invoca la función para validar su funcionalidad.
 
 */
 
+    function Dog(name, color, race) {
+        this.name = name;
+        this.color = color;
+        this.race = race;
+    }
 
+    function printInfo(dogelio) {
+        const str = `Nombre: ${dogelio.name} , De color: ${dogelio.color} , Raza: ${dogelio.race}`;
+        console.log(str);
+    }
 
+    function challenge3() {
+        const dog1 = new Dog("aaron", "black", "mexican");
+        const dog2 = new Dog("faker", "white", "korean");
+        const dog3 = new Dog("dopa", "red", "korean");
+        printInfo(dog1);
+        printInfo(dog2);
+        printInfo(dog3);
+    }
 
 
 </script>
@@ -80,7 +109,7 @@ Invoca la función para validar su funcionalidad.
 
     <button onclick="challenge1()">Challenge 1</button>
     <button onclick="challenge2()">Challenge 2</button>
-    <button onclick="challenge3()">Challenge 2</button>
+    <button onclick="challenge3()">Challenge 3</button>
 
   
 <div id = "dummy">
